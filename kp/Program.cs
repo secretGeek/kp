@@ -46,6 +46,19 @@ kp -r hotmail
 
             if (args.Length == 0)
             {
+                Console.Out.WriteLine("No Arguments Provided.");
+            } else
+            {
+                int ai = 0;
+                foreach(var arg in args)
+                {
+                    Console.Out.WriteLine($"{ai:00}: '{arg}'");
+                    ai++;
+                }
+            }
+
+            if (args.Length == 0)
+            {
                 ListAllKeys(f);
                 return result;
             }
