@@ -44,16 +44,26 @@ kp -r hotmail
 
             string valueFromPipe = ReadPipeLine();
 
-            if (args.Length == 0)
+            var showArgs = false;
+
+            if (showArgs)
             {
-                Console.Out.WriteLine("No Arguments Provided.");
-            } else
-            {
-                int ai = 0;
-                foreach(var arg in args)
+                if (args.Length == 0)
                 {
-                    Console.Out.WriteLine($"{ai:00}: '{arg}'");
-                    ai++;
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.Out.WriteLine("No Arguments Provided.");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    int ai = 0;
+                    foreach (var arg in args)
+                    {
+                        Console.Out.WriteLine($"{ai:00}: '{arg}'");
+                        ai++;
+                    }
+                    Console.ResetColor();
                 }
             }
 
